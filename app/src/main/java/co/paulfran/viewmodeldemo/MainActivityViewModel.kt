@@ -14,10 +14,6 @@ class MainActivityViewModel: ViewModel() {
     init {
         count.value = 0
     }
-//    No Longer need this since we are observing the count via live data
-//    fun getCurrentCount(): Int {
-//        return count
-//    }
 
     fun updateCount() {
         count.value = (count.value)?.plus(1)

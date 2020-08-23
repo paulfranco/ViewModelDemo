@@ -17,13 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
+        binding.viewModel = viewModel
+
         viewModel.totalCount.observe(this, Observer {
             binding.countText.text = it.toString()
         })
-        binding.increaseCountButton.setOnClickListener {
 
-            viewModel.updateCount()
-        }
         println("=== onCreate Called ===")
     }
 
